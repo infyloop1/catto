@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+button {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    font-size: 24px;
+    cursor: pointer;
+    border: 6px solid transparent; /* Initial border style */
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ff00f0, #00fffc);
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out; /* Transition for background change */
+    animation: borderAnimation 1s infinite alternate; /* Border animation */
+}
+
+button:hover {
+    background: linear-gradient(45deg, #00fffc, #ff00f0);
+    animation: none; /* Disable animation on hover */
+}
+
+@keyframes borderAnimation {
+    from {
+        border-color: transparent; /* Initial border color */
+    }
+    to {
+        border-color: #fff; /* Final border color */
+    }
+}
+#catContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#videoContainer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+/* Add a wrapper for the video with border */
+#videoWrapper {
+    position: relative;
+    display: inline-block;
+    border: 10px solid transparent;
+    border-image: linear-gradient(45deg, #ff00f0, #00fffc);
+    border-image-slice: 1;
+    overflow: hidden;
+    width: 30vw; /* 60% of the viewport width */
+    height: 40vh; /* 40% of the viewport height */
+}
+
+/* Style the video to fill the wrapper */
+#videoWrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
