@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function createFastMovingCats() {
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 30; i++) {
             createFastMovingCat('cat1.gif');
             createFastMovingCat('cat2.gif');
             createFastMovingCat('cat3.gif');
