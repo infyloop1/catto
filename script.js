@@ -24,6 +24,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // Set random starting position
         cat.style.left = Math.random() * window.innerWidth + 'px';
         cat.style.top = Math.random() * window.innerHeight + 'px';
+        
+        // Adjust size for smaller screens
+        if (window.innerWidth <= 768) {
+            cat.style.width = '100px';
+            cat.style.height = 'auto';
+        }
     
         // Append cat to the container
         catContainer.appendChild(cat);
